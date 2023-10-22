@@ -4,4 +4,18 @@
 
 [✅ Wordle Project] (https://github.com/MangwonCassie/MiniProject)
 
-[Test 중] (https://www.google.com/)
+
+
+[✅ Chat App Project] (https://github.com/MangwonCassie/MiniProject)
+
+⚫ Back End
+- Node JS
+- Express
+- cors
+- Axios
+
+⚫ Front End
+- React
+- axios
+- react-chat-engine-advanced
+- react-dom
