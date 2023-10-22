@@ -9,13 +9,13 @@
 
 [✅ Chat App Project] (https://github.com/MangwonCassie/MiniProject)
 
-⚫ Back End
+⚫ Backend
 - Node JS
 - Express
 - cors
 - Axios
 
-⚫ Front End
+⚫ Frontend
 - React
 - axios
 - react-chat-engine-advanced
