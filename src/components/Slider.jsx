@@ -38,18 +38,20 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     transform: translateX(${props => props.slideIndex * -100}vw);
+    transition: all 1.5s ease;
 `
 
 
 const Slide = styled.div`
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: flex; 
     align-items: center;
 `
 const ImgContainer = styled.div`
     height: 100%;
     flex:1;
+    
 `
 
 const Image = styled.img`
