@@ -2,10 +2,12 @@
 import { FacebookOutlined, Instagram, MailOutline, Phone, Room, Twitter } from '@mui/icons-material';
 import React from 'react'
 import styled from 'styled-components';
+import { mobile } from '../Responsive';
 
 
 const Container = styled.div`
    display: flex;
+   ${mobile({flexDirection: "column "})}
 `
 const Left = styled.div`
     flex: 1;
@@ -43,6 +45,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
     flex: 1;
     padding: 20px;
+    ${mobile({display: "none"})}
 `
 
 const Title = styled.h3`

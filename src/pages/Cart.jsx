@@ -3,6 +3,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../Responsive";
 
 const Container = styled.div`
 `
@@ -33,6 +34,7 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
+  ${mobile({display: "none"})};
 `;
 const TopText = styled.span`
   text-decoration: underline;
@@ -44,6 +46,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({flexDirection: "column"})};
 `;
 
 const Info = styled.div`
@@ -125,6 +128,7 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+ 
 `;
 
 const SummaryTitle = styled.h1`

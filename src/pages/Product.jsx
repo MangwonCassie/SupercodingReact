@@ -2,8 +2,9 @@ import styled from "styled-components"
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import { Announcement } from "../components/Announcement";
+import  Announcement  from "../components/Announcement";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../Responsive";
 
 
 const Container = styled.div`
@@ -12,6 +13,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+    ${mobile({padding: "10px", flexDirection:"column"})};
 
 `;
 
@@ -50,6 +52,7 @@ const FilterContainer = styled.div`
     margin: 30px 0px;
     display: flex;
     justify-content: space-between;
+    ${mobile({width: "100%"})};
 `;
 
 const Filter = styled.div`
@@ -86,6 +89,7 @@ const AddContainer = styled.div`
     display: flex;
     align-item: center;
     justify-content: space-between;
+    ${mobile({width: "100%"})};
 `;
 
 const AmountContainer = styled.div`

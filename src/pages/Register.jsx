@@ -19,6 +19,7 @@ const Wrapper = styled.div`
     margin: 40px;
     width: 40%;
     background-color: white;
+    ${mobile({width:"75%"})};
 
 `;
 
