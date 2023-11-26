@@ -14,6 +14,7 @@
 - Express
 - cors
 - Axios
+- Stripe (Payment)
 
 ⚫ Frontend
 - React
