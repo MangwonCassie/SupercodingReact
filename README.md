@@ -7,9 +7,9 @@
 정리중
 
 
-[✅ Chat App Project] (https://github.com/MangwonCassie/MiniProject/tree/ecommerceapi)
+[✅ Chat App Project] 
 
-⚫ Backend
+⚫ Backend (https://github.com/MangwonCassie/MiniProject/tree/ecommerceapi)
 - Node JS
 - Express
 - cors
