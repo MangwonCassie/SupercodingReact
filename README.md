@@ -16,7 +16,7 @@
 - Axios
 - Stripe (Payment)
 
-⚫ Frontend
+⚫ Frontend (https://github.com/MangwonCassie/MiniProject/tree/ecommerce)
 - React
 - axios
 - react-chat-engine-advanced
