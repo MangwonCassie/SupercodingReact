@@ -15,7 +15,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  ${mobile({ padding: "10px", flexDirection:"column" })}
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
@@ -127,10 +127,10 @@ const Product = () => {
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
 
-  useEffect(()=> {
+  useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get("/products/find/"+id)
+        const res = await publicRequest.get("/products/find/" + id)
         setProduct(res.data)
       } catch {
 
@@ -139,6 +139,8 @@ const Product = () => {
     getProduct()
   }, [id])
 
+
+  console.log('test 안 가지고오네', product);
   return (
     <Container>
       <Navbar />
@@ -155,10 +157,12 @@ const Product = () => {
           <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
+              {/* 지금 배열아님 color가 
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              {product.color.map((cc) => (
+                <FilterColor color={cc} key={cc} />
+              ))} */}
+              <FilterColor color={product.color} />
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
