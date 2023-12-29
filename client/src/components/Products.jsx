@@ -60,7 +60,11 @@ const Products = ({cat, filters, sort}) => {
 
   return (
     <Container>
-      {filteredProducts.map((item) => (
+      {cat ? filteredProducts.map((item) => (
+        <Product item={item} key={item.id} />
+      )) : products
+        .slice(0,5)
+        .map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>
@@ -68,3 +72,5 @@ const Products = ({cat, filters, sort}) => {
 };
 
 export default Products;
+
+
