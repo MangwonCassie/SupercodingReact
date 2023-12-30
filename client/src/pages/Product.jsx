@@ -6,9 +6,11 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
-import { useState } from "react";
+import axios from "axios";
+import {addProduct} from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
@@ -129,6 +131,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     const getProduct = async () => {
@@ -154,7 +158,8 @@ const Product = () => {
 
 const handleClick = () => {
   //update cart
-  //axios.post 진행 전
+  dispatch(addProduct({product, quantity}));
+  
 }
 
   return (
