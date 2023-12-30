@@ -126,6 +126,9 @@ const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
 
   useEffect(() => {
     const getProduct = async () => {
@@ -139,8 +142,21 @@ const Product = () => {
     getProduct()
   }, [id])
 
+  const handleQuantity = (type) => {
+    if(type === "dec") {
+      quantity >1  && setQuantity(quantity-1)
+    } else {
+      setQuantity(quantity+1)
+    }
+  } 
 
-  console.log('test 안 가지고오네', product);
+ 
+
+const handleClick = () => {
+  //update cart
+  //axios.post 진행 전
+}
+
   return (
     <Container>
       <Navbar />
@@ -157,31 +173,31 @@ const Product = () => {
           <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
-              {/* 지금 배열아님 color가 
               <FilterTitle>Color</FilterTitle>
-              {product.color.map((cc) => (
-                <FilterColor color={cc} key={cc} />
-              ))} */}
-              <FilterColor color={product.color} />
+              {product.color?.map((cc) => (
+                <FilterColor color={cc} key={cc} onClick={()=>setColor(cc)} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+              <FilterSize onChange={(e)=>setSize(e.target.value)} >
+                {product.size ? (
+                  product.size.map((s) => (
+                    <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                  ))
+                ) : (
+                  <FilterSizeOption>No sizes available</FilterSizeOption>
+                )}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={()=>handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={()=>handleQuantity("inc")}/>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
