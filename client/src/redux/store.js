@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartRedux";
+import { useReducer } from "react";
 
 
 //모든 리듀서 다 기재해야함
@@ -8,5 +9,6 @@ import cartReducer from "./cartRedux";
 export default configureStore({
     reducer: {
         cart: cartReducer,
+        user: useReducer,
     },
 });
