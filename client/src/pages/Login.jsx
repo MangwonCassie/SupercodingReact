@@ -65,6 +65,9 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color: red;
+`
 
 //아이디 : admin, 비밀번호: admin
 
@@ -95,6 +98,7 @@ const Login = () => {
           <Input placeholder="password" type="password"
           onChange={(e) => setPassword(e.target.value) } />
           <Button onClick={handleClick} disabled={isfetching || error} >LOGIN</Button>
+          {error && <Error>Something is wrong. Please recheck username and password</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
