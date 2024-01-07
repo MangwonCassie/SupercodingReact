@@ -81,9 +81,9 @@ const Login = () => {
         <Form>
           <Input placeholder="username"
           onChange={(e) => setUsername(e.target.value)} />
-          <Input placeholder="password"
+          <Input placeholder="password" type="password"
           onChange={(e) => setPassword(e.target.value) } />
-          <Button>LOGIN</Button>
+          <Button onClick={handleClick} >LOGIN</Button>
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
