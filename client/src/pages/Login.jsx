@@ -51,6 +51,11 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+
+  &:disabled{
+    color:green;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled.a`
