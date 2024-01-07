@@ -13,7 +13,8 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  const user = true
+  const user = false
+  //이거 user=false로 해야 login됨
   return (<Router>
     <Routes>
       <Route exact path="/" element={<Home />}>
