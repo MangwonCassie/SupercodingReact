@@ -4,7 +4,7 @@
 
 [✅ Wordle Project] (https://github.com/MangwonCassie/MiniProject)
 
-정리중
+- JavaScript
 
 
 [✅ Chat App Project] 
