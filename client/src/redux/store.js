@@ -21,7 +21,6 @@ import {
     version: 1,
     storage,
   }
-  
 
   //홈페이지 rootReducer를 userReducer로
   const persistedReducer = persistReducer(persistConfig, userReducer);
@@ -36,7 +35,7 @@ export const store = configureStore({
         user: persistedReducer,
     },
 
-    //추후에 공부하면됨
+    //추후 팔로우업
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
