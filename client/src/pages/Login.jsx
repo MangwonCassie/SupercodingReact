@@ -60,6 +60,9 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+
+//아이디 : admin, 비밀번호: admin
+
 const Login = () => {
 
   const [username, setUsername] = useState("");
