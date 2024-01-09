@@ -3,7 +3,7 @@
 | ------------ | ------------- |
 | Language     | <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">   |
 | IDE          | <img src="https://img.shields.io/badge/intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white"> <img src="https://img.shields.io/badge/VisualStudio-007ACC?style=for-the-badge&logo=visualstudio&logoColor=white">  |
-| Framework    |  <img src="https://img.shields.io/badge/Redux- 764ABC?style=for-the-badge&logo=redux&logoColor=white"><img src="https://img.shields.io/badge/Reduxtoolkit- 764ABC?style=for-the-badge&logo=reduxtoolkit&logoColor=white"><img src="https://img.shields.io/badge/Reduxpersist-000000?style=for-the-badge&logo=reduxpersist&logoColor=white">|
+| Framework    |  <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"> <img src="https://img.shields.io/badge/Reduxtoolkit- 764ABC?style=for-the-badge&logo=reduxtoolkit&logoColor=white"> <img src="https://img.shields.io/badge/Reduxpersist-000000?style=for-the-badge&logo=reduxpersist&logoColor=white">|
 | Database     |  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongoDB&logoColor=white">  |
 | Frontend     |<img src="https://img.shields.io/badge/styledcomponents-61DAFB?style=for-the-badge&logo=styledcomponents&logoColor=white"> |
 | Library      |<img src="https://img.shields.io/badge/REACT-61DAFB?style=for-the-badge&logo=react&logoColor=white">  |
