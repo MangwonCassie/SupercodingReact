@@ -13,12 +13,18 @@ const Login = () => {
     const handleClick = (e) => {
         e.preventDefault();
         //redux toolkit 쓸 예정
-        login(dispatch,{username, password});
+        login(dispatch, { username, password });
     }
     return (
-        <div>
-            <input type="text" placeholder="username" onChange={e=>setUsername(e.target.value)} />
-            <input type="password" placeholder="password"  onChange={e=>setPassword(e.target.value)}/>
+        <div style={{
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems:"center",
+            justifyContent:"center",
+        }}>
+            <input type="text" placeholder="username" onChange={e => setUsername(e.target.value)} />
+            <input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} />
             <button onClick={handleClick}> Login</button>
         </div>
     );
