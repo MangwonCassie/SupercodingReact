@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:5000/api/"
-const TOKEN = 
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OGFmODM2MGQwMDlkYTRmOWYzMjNlMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwMzgyMjIzOSwiZXhwIjo0ODU5NTgyMjM5fQ.BstxN-pJRzvdUKa-dzNnuKWygdEP1_kr6n6AY-1h5OA"
+const TOKEN =   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken;
+
+console.log('token 확인용 2번 Parce', TOKEN);
 
 export const publicRequest = axios.create({
     baseURL: BASE_URL,
