@@ -21,9 +21,9 @@ import {
     storage,
   }
 
-
-  //홈페이지 rootReducer를 userReducer로
+  
   const persistedReducer = persistReducer(persistConfig, userReducer);
+  
 
   
 //주의해야 할 부분은 reducer가 아니라 reducers가 아닌 reducer 필드

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/apiCalls';
+
+
 
 const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch(); //to be able to use actions im apiCalls.
 
     const handleClick = (e) => {
         e.preventDefault();
         //redux toolkit 쓸 예정
+        login(dispatch,{username, password});
     }
     return (
         <div>
