@@ -9,7 +9,7 @@ export default function WidgetSm() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await userRequest.get("users/");
+        const res = await userRequest.get("users/?new=true");
         console.log("res.data확인",res.data);
         setUsers(res.data);
       } catch {}
@@ -26,7 +26,7 @@ export default function WidgetSm() {
             <img
               src={
                 user.img ||
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EC%2596%2591%25ED%258C%258C%25EC%25BF%25B5%25EC%2595%25BC&psig=AOvVaw3U1ykJZPikExIzXGEgYxW1&ust=1704943262071000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCJDDn97u0YMDFQAAAAAdAAAAABAE"
+                "https://i.namu.wiki/i/tt0mLqnhpbkJjJFnaDmr4PiquIB1GYmEyvYsTaCq2GOgkJDN1hTENObqYp2UNAOidQ_Wh3fwSpXZix_Y2LoH1KMaqLFP-CzDvVlf-r_t0QMri4iBk49BqvYCXF_BtvaHDvij-yib7EbN2NtnApSuZQ.webp"
               }
               alt=""
               className="widgetSmImg"
