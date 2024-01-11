@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/apiCalls";
 
 
@@ -14,6 +14,7 @@ import { getProducts } from "../../redux/apiCalls";
 export default function ProductList() {
   const [data, setData] = useState(productRows);
   const dispatch = useDispatch();
+  const products = useSelector((state)=> state.product.products);
 
   useEffect(()=> {
     getProducts(dispatch);
@@ -72,9 +73,10 @@ export default function ProductList() {
   return (
     <div className="productList">
       <DataGrid
-        rows={data}
+        rows={products}
         disableSelectionOnClick
         columns={columns}
+        getRowId={(row)=>row._id}
         pageSize={8}
         checkboxSelection
       />
