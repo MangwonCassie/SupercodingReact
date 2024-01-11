@@ -22,6 +22,7 @@ export default function FeaturedInfo() {
 
   //NOTE 
   console.log("orders income", income);
+  
   return (
     <div className="featured">
       <div className="featuredItem">
