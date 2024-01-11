@@ -54,14 +54,11 @@ export default function Home() {
 
   }, [MONTHS])
 
-  //NOTE: Test 중
-  console.log("userStats 테스트",userStats);
-
 
   return (
     <div className="home">
       <FeaturedInfo />
-      <Chart data={userData} title="User Analytics" grid dataKey="Active User" />
+      <Chart data={userStats} title="User Analytics" grid dataKey="Active User" />
       <div className="homeWidgets">
         <WidgetSm />
         <WidgetLg />
