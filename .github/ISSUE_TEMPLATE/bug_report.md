@@ -10,7 +10,7 @@ assignees: ''
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-1. feat: featureInfo (feature component) income 데이터 호출 안됨
+1. feat: featureInfo (feature component) income 데이터 호출 안됨 -> stripe api연결해야하는데 회원가입 미국주소 문제로 일단 빼고 진행
 
 **To Reproduce**
 Steps to reproduce the behavior:
