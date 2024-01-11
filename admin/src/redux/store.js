@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userRedux";
+import productReducer from "./productRedux"
 
 //로그인 후 유저갖고 있게끔 처리
 import {
@@ -22,7 +23,7 @@ import {
   }
 
 
-  const rootReducer = combineReducers({user: userReducer});
+  const rootReducer = combineReducers({user: userReducer, product: productReducer});
   
   const persistedReducer = persistReducer(persistConfig, rootReducer);
   

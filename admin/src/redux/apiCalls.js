@@ -16,7 +16,7 @@ export const login = async (dispatch, user) => {
 }
 
 
-//NOTE: pages>productList>
+//NOTE: pages>productList> and store로 연결
 export const getProducts = async (dispatch) => {
     dispatch(getProductStart());
     
