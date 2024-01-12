@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import userReducer from "./userRedux";
-import productReducer from "./productRedux"
+import userReducer from "../slices/userSlice.js";
+import productReducer from "../slices/productSlice.js"
 
 //로그인 후 유저갖고 있게끔 처리
 import {

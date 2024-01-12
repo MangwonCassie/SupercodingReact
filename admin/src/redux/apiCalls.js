@@ -1,6 +1,6 @@
 import { publicRequest } from "../requestMethods";
-import { getProductFailure, getProductStart, getProductSuccess } from "./productRedux";
-import { loginFailure, loginStart, loginSuccess } from "./userRedux"
+import { getProductFailure, getProductStart, getProductSuccess } from "./slices/productSlice.js";
+import { loginFailure, loginStart, loginSuccess } from "./slices/userSlice.js"
 
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
