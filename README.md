@@ -11,4 +11,4 @@
 | Server       | <img src="https://img.shields.io/badge/MongoDBCloud-47A248?style=for-the-badge&logo=MongoDBCloud&logoColor=white">   |
 | Version Control        | <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">  |
 
-📌[노션 자료]: (https://www.notion.so/E-commerce-by-Cassie-325e756d0281477cb5c74e32488698e1?pvs=4)
+📌[노션 자료]: (https://decisive-atmosphere-edd.notion.site/E-commerce-by-Cassie-325e756d0281477cb5c74e32488698e1?pvs=4)
