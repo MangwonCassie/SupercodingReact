@@ -45,6 +45,8 @@ export const productSlice = createSlice({
   }
 });
 
+
+
 //NOTE: apiCalls와 연결
 export const {getProductStart, getProductSuccess, getProductFailure, 
   deleteProductStart, deleteProductSuccess, deleteProductFailure} = productSlice.actions;
