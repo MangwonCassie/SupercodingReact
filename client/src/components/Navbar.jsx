@@ -3,8 +3,9 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from 'react-router-dom';
+import { logout } from "../redux/userRedux";
 
 
 const Container = styled.div`
@@ -71,7 +72,23 @@ const MenuItem = styled.div`
 
 const Navbar = () => {
 
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.currentUser);
   const quantity = useSelector(state => state.cart.quantity);
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    //NOTE: SIGN IN 클릭 시 /login 으로 이동
+    navigate('/login');
+  };
+
+   
+
+    const handleLogout = () => {
+      // 로그아웃 액션 디스패치
+      dispatch(logout());
+    };
+ 
 
   return (
     <Container>
@@ -87,8 +104,17 @@ const Navbar = () => {
           <Logo>Cassie's E-commerce</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+        {user ? (
+            <>
+              {/* 로그인 된 경우에 표시되어야 할 JSX 코드 */}
+              <MenuItem onClick={handleLogout }>LOGOUT</MenuItem>
+            </>
+          ) : (
+            <>
+              <MenuItem>REGISTER</MenuItem>
+              <MenuItem onClick={handleSignInClick}>SIGN IN</MenuItem>
+            </>
+          )}
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">
