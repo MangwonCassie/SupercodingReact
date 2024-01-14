@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -156,9 +157,10 @@ const Button = styled.button`
 
 const Cart = () => {
 
-  const cart = useSelector(state=>state.cart)
-  console.log("카트가왜..",cart); //바보야 니가 장바구니에 넣어야지 생기지 ㅋㅋ
-  
+  const cart = useSelector(state => state.cart)
+  const navigate = useNavigate();
+
+
   return (
     <Container>
       <Navbar />
@@ -166,7 +168,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton onClick={() => navigate(-1)}>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
@@ -175,7 +177,7 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-          {cart.products.map((product) => (
+            {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
                   <Image src={product.img} />
@@ -205,10 +207,10 @@ const Cart = () => {
               </Product>
             ))}
             <Hr />
-            
+
           </Info>
           <Summary>
-          <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
