@@ -4,15 +4,41 @@ import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
 import { Publish } from "@material-ui/icons";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { updateProducts } from "../../redux/apiCalls";
 
 export default function Product() {
     const location = useLocation(); //NOTE: it returns an object with information about the current URL
     const productId = location.pathname.split("/")[2];
+    const dispatch = useDispatch();
 
     const product = useSelector((state)=> 
     state.product.products.find((product) => product._id === productId) //from store state, product(name정의), products
     )
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        console.log("e target test", e.target);
+
+        const updatedProduct = {
+            title: e.target.form.elements.productName.value,
+            desc: e.target.form.elements.productDesc.value,
+            price: e.target.form.elements.productPrice.value,
+            inStock: e.target.form.elements.inStock.value === "yes" ? true : false,
+            // 다른 필요한 정보들도 추가할 수 있습니다.
+            
+          };
+        
+          updateProducts(productId, dispatch, updatedProduct);
+        //NOTE: product안 넘겨줘서 계속 오류남 주의
+     
+    }
+
+    useEffect(() => {
+        // NOTE: product 상태가 변경될 때 실행되는 로직 update부분 위해서
+    console.log("Product data changed!");
+    }, [productId, product]);
 
   return (
     <div className="product">
@@ -51,13 +77,13 @@ export default function Product() {
           <form className="productForm">
               <div className="productFormLeft">
                   <label>Product Name</label>
-                  <input type="text" placeholder={product.title} />
+                  <input type="text" placeholder={product.title} name="productName"  />
                   <label>Product Description</label>
-                  <input type="text" placeholder={product.desc} />
+                  <input type="text" placeholder={product.desc} name="productDesc" />
                   <label>Price</label>
-                  <input type="text" placeholder={product.price} />
+                  <input type="text" placeholder={product.price} name="productPrice"  />
                   <label>In Stock</label>
-                  <select name="inStock" id="idStock">
+                  <select name="inStock" id="idStock" >
                       <option value="yes">Yes</option>
                       <option value="no">No</option>
                   </select>
@@ -65,12 +91,12 @@ export default function Product() {
               <div className="productFormRight">
                   <div className="productUpload">
                       <img src={product.img} alt="" className="productUploadImg" />
-                      <label for="file">
+                      <label htmlFor="file">
                           <Publish/>
                       </label>
                       <input type="file" id="file" style={{display:"none"}} />
                   </div>
-                  <button className="productButton">Update</button>
+                  <button className="productButton" onClick={handleUpdate}>Update</button>
               </div>
           </form>
       </div>

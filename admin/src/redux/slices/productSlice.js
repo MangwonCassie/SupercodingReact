@@ -28,7 +28,7 @@ export const productSlice = createSlice({
     //NOTE: DELETE
     deleteProductStart: (state) => {
       state.isFetching = true;
-      state.error = true;
+      state.error = false;
     },
 
     deleteProductSuccess: (state, action) => {
@@ -46,19 +46,21 @@ export const productSlice = createSlice({
     //NOTE update
     updateProductStart: (state) => {
       state.isFetching = true;
-      state.error = true;
+      state.error = false;
     },
 
     updateProductSuccess: (state, action) => {
       state.isFetching = false;
-      const updatedProductIndex = state.products.findIndex((item) => item._id === action.payload.id);
-
-      // Update the product in the array
-      if (updatedProductIndex !== -1) {
-        state.products[updatedProductIndex] = action.payload;
-      }
-
+      const productIndex = state.products.findIndex((item) => item._id === action.payload._id);
+      // 새로운 배열 생성
+      const updatedProducts = [...state.products];
+      // 해당 인덱스의 상품을 새로운 데이터로 교체
+      updatedProducts[productIndex] = action.payload.product;
+      // 상태 업데이트
+      state.products = updatedProducts;
+      console.log("update 확인중", state.products);
     },
+    
     updateProductFailure: (state) => {
       state.isFetching = false;
       state.error = true;

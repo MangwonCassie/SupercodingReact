@@ -1,5 +1,5 @@
 import { publicRequest, userRequest } from "../requestMethods";
-import { deleteProductFailure, deleteProductStart, deleteProductSuccess, getProductFailure, getProductStart, getProductSuccess, updateProductStart } from "./slices/productSlice.js";
+import { deleteProductFailure, deleteProductStart, deleteProductSuccess, getProductFailure, getProductStart, getProductSuccess, updateProductFailure, updateProductStart, updateProductSuccess } from "./slices/productSlice.js";
 import { loginFailure, loginStart, loginSuccess } from "./slices/userSlice.js"
 
 export const login = async (dispatch, user) => {
@@ -44,14 +44,14 @@ export const deleteProducts = async (id, dispatch) => {
 
 }
 
-export const updateProducts = async (id, dispatch) => {
-        dispatch(updateProductStart);
-        
+//NOTE: disaptch는 apiCalls에서 쓰고 끝
+export const updateProducts = async (id, dispatch, product) => {
+        dispatch(updateProductStart());
     try{
-        const res = await userRequest.update(`/products/${id}`);
-            dispatch(deleteProductSuccess(res.data));
-    }catch{
-         dispatch(deleteProductFailure);
+            dispatch(updateProductSuccess(product));
+            console.log("product 왜 안나와 apicalls", product);
+    }catch (err) {
+         dispatch(updateProductFailure());
     
     }
 
