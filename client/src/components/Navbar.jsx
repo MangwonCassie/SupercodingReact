@@ -8,6 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logout } from "../redux/userRedux";
 
 
+
+
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
@@ -51,8 +53,13 @@ const Center = styled.div`
   text-align: center;
 `;
 
+const LogoLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const Logo = styled.h1`
   font-weight: bold;
+  text-decoration: none;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -82,13 +89,13 @@ const Navbar = () => {
     navigate('/login');
   };
 
-   
 
-    const handleLogout = () => {
-      // 로그아웃 액션 디스패치
-      dispatch(logout());
-    };
- 
+
+  const handleLogout = () => {
+    // 로그아웃 액션 디스패치
+    dispatch(logout());
+  };
+
 
   return (
     <Container>
@@ -101,13 +108,15 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Cassie's E-commerce</Logo>
+        <LogoLink to="/">
+            <Logo>Cassie's E-commerce</Logo>
+          </LogoLink>
         </Center>
         <Right>
-        {user ? (
+          {user ? (
             <>
               {/* 로그인 된 경우에 표시되어야 할 JSX 코드 */}
-              <MenuItem onClick={handleLogout }>LOGOUT</MenuItem>
+              <MenuItem onClick={handleLogout}>LOGOUT</MenuItem>
             </>
           ) : (
             <>
