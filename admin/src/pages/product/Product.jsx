@@ -37,7 +37,7 @@ export default function Product() {
 
     useEffect(() => {
         // NOTE: product 상태가 변경될 때 실행되는 로직 update부분 위해서
-    console.log("Product data changed!");
+    console.log("Product data changed!", );
     }, [productId, product]);
 
   return (
