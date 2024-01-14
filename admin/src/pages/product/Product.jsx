@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector } from "react-redux";
 
 export default function Product() {
-    const location = useLocation();
+    const location = useLocation(); //NOTE: it returns an object with information about the current URL
     const productId = location.pathname.split("/")[2];
 
     const product = useSelector((state)=> 
