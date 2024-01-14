@@ -1,14 +1,14 @@
 import { publicRequest, userRequest } from "../requestMethods";
-import { deleteProductFailure, deleteProductStart, deleteProductSuccess, getProductFailure, getProductStart, getProductSuccess, updateProductFailure, updateProductStart, updateProductSuccess } from "./slices/productSlice.js";
+import { addProductFailure, addProductStart, addProductSuccess, deleteProductFailure, deleteProductStart, deleteProductSuccess, getProductFailure, getProductStart, getProductSuccess, updateProductFailure, updateProductStart, updateProductSuccess } from "./slices/productSlice.js";
 import { loginFailure, loginStart, loginSuccess } from "./slices/userSlice.js"
 
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
-    
-    try{
+
+    try {
         const res = await publicRequest.post("/auth/login", user);
         dispatch(loginSuccess(res.data));
-    }catch{
+    } catch {
         dispatch(loginFailure());
 
     }
@@ -19,11 +19,11 @@ export const login = async (dispatch, user) => {
 //NOTE: pages>productList> and store로 연결
 export const getProducts = async (dispatch) => {
     dispatch(getProductStart());
-    
-    try{
+
+    try {
         const res = await publicRequest.get("/products");
         dispatch(getProductSuccess(res.data));
-    }catch{
+    } catch {
         dispatch(getProductFailure);
 
     }
@@ -33,11 +33,11 @@ export const getProducts = async (dispatch) => {
 
 export const deleteProducts = async (id, dispatch) => {
     dispatch(deleteProductStart);
-    
-    try{
+
+    try {
         const res = await userRequest.delete(`/products/${id}`);
         dispatch(deleteProductSuccess(res.data));
-    }catch{
+    } catch {
         dispatch(deleteProductFailure);
 
     }
@@ -46,13 +46,23 @@ export const deleteProducts = async (id, dispatch) => {
 
 //NOTE: disaptch는 apiCalls에서 쓰고 끝
 export const updateProducts = async (id, dispatch, product) => {
-        dispatch(updateProductStart());
-    try{
-            dispatch(updateProductSuccess(product));
-            console.log("product 왜 안나와 apicalls", product);
-    }catch (err) {
-         dispatch(updateProductFailure());
-    
-    }
+    dispatch(updateProductStart());
+    try {
+        const res = await userRequest.put(`/products/${id}`, product);
+        dispatch(updateProductSuccess({ id, product: res.data }));
+    } catch (err) {
+        dispatch(updateProductFailure());
 
+    }
 }
+
+export const addProduct = async (product, dispatch) => {
+    dispatch(addProductStart());
+    try {
+        const res = await userRequest.post(`/products`, product);
+        dispatch(addProductSuccess(res.data));
+    } catch (err) {
+        dispatch(addProductFailure());
+    }
+}
+

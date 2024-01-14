@@ -50,6 +50,7 @@ export const productSlice = createSlice({
     },
 
     updateProductSuccess: (state, action) => {
+      console.log("Before update:", state.products); // 추가
       state.isFetching = false;
       const productIndex = state.products.findIndex((item) => item._id === action.payload._id);
       // 새로운 배열 생성
@@ -58,13 +59,27 @@ export const productSlice = createSlice({
       updatedProducts[productIndex] = action.payload.product;
       // 상태 업데이트
       state.products = updatedProducts;
-      console.log("update 확인중", state.products);
+      console.log("After update:", state.products.product); // 추가
     },
-    
+
     updateProductFailure: (state) => {
       state.isFetching = false;
       state.error = true;
-    }
+    },
+
+    //UPDATE
+    addProductStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    addProductSuccess: (state, action) => {
+      state.isFetching = false;
+      state.products.push(action.payload);
+    },
+    addProductFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+    },
 
   }
 });
@@ -72,8 +87,17 @@ export const productSlice = createSlice({
 
 
 //NOTE: apiCalls와 연결
-export const { getProductStart, getProductSuccess, getProductFailure,
-  deleteProductStart, deleteProductSuccess, deleteProductFailure
-, updateProductStart, updateProductSuccess, updateProductFailure } = productSlice.actions;
+export const { getProductStart,
+  getProductSuccess,
+  getProductFailure,
+  deleteProductStart, 
+  deleteProductSuccess,
+  deleteProductFailure,
+   updateProductStart,
+  updateProductSuccess,
+  updateProductFailure,
+  addProductStart,
+  addProductSuccess,
+  addProductFailure, } = productSlice.actions;
 
 export default productSlice.reducer;
