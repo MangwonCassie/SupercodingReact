@@ -31,3 +31,12 @@ app.use("/api/checkout", stripeRoute);
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");
 });
+
+//NOTE: heroku 설정
+if(process.env.NODE_ENV === "production") {
+  app.use(express.static("api/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"))
+  })
+}
