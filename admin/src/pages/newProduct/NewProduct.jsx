@@ -10,19 +10,23 @@ export default function NewProduct() {
           <input type="file" id="file" />
         </div>
         <div className="addProductItem">
-          <label>Name</label>
+          <label>Title</label>
           <input type="text" placeholder="Apple Airpods" />
         </div>
         <div className="addProductItem">
-          <label>Stock</label>
-          <input type="text" placeholder="123" />
+          <label>Description</label>
+          <input type="text" placeholder="description" />
         </div>
         <div className="addProductItem">
-          <label>Active</label>
-          <select name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
+          <label>Price</label>
+          <input type="text" placeholder="100" />
+        </div>
+        <div className="addProductItem">
+          <label>Stock</label>
+        <select>
+          <option value="true">YES</option>
+          <option value="false">NO</option>
+        </select>
         </div>
         <button className="addProductButton">Create</button>
       </form>

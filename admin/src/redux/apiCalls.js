@@ -52,7 +52,6 @@ export const updateProducts = async (id, dispatch, product) => {
         dispatch(updateProductSuccess({ id, product: res.data }));
     } catch (err) {
         dispatch(updateProductFailure());
-
     }
 }
 

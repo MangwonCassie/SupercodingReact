@@ -67,7 +67,7 @@ export const productSlice = createSlice({
       state.error = true;
     },
 
-    //UPDATE
+    //NOTE: ADD
     addProductStart: (state) => {
       state.isFetching = true;
       state.error = false;
