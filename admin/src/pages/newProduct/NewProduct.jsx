@@ -22,9 +22,6 @@ export default function NewProduct() {
   const handleCategories = (e) => {
     setCat(e.target.value.split(",").map(category => category.trim()));
   }
-  
-  //콘솔 검사할 때 console.log(cat) or inputs or file;
-  console.log(file);
 
   const handleClick = (e) => {
     e.preventDefault();
