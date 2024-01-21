@@ -4,6 +4,17 @@ const BASE_URL = process.env.NODE_ENV === 'production'
   ? 'https://mighty-waters-06853-0623ee72fb5f.herokuapp.com/api/' // 여기에 Heroku 주소 + /api/
   : 'http://localhost:5000/api/'; // 로컬 개발 서버 주소
 
+
+  if (process.env.NODE_ENV === 'production') {
+    // 프로덕션 환경에서 실행 중인 코드
+    console.log('프로덕션 환경');
+  } else {
+    // 개발 환경에서 실행 중인 코드
+    console.log('개발 환경');
+  }
+
+
+  
 // 로컬 스토리지에서 데이터 가져오기
 const storedData = localStorage.getItem("persist:root");
 

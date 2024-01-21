@@ -114,7 +114,7 @@ const Navbar = () => {
         </Left>
         <Center>
         <LogoLink to="/">
-            <Logo>Cassie's E-commerce</Logo>
+            <Logo>Cassie</Logo>
           </LogoLink>
         </Center>
         <Right>

@@ -20,7 +20,8 @@ const Products = ({cat, filters, sort}) => {
   useEffect(()=>{
     const getProducts = async () => {
       try{
-        const res = await axios.get(cat ? `http://localhost:5000/api/products?category=${cat}` : "http://localhost:5000/api/products");
+        // const res = await axios.get(cat ? `http://localhost:5000/api/products?category=${cat}` : "http://localhost:5000/api/products");
+        const res = await axios.get(cat ? `https://mighty-waters-06853-0623ee72fb5f.herokuapp.com/api/products?category=${cat}` : "https://mighty-waters-06853-0623ee72fb5f.herokuapp.com/api/products");
         console.log('res.data확인중',res.data); /*확인용 지우기 */
         setProducts(res.data);
       } catch (err) {
