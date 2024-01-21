@@ -84,9 +84,14 @@ const Navbar = () => {
   const quantity = useSelector(state => state.cart.quantity);
   const navigate = useNavigate();
 
-  const handleSignInClick = () => {
+  const handleSignInClickToLogin = () => {
     //NOTE: SIGN IN 클릭 시 /login 으로 이동
     navigate('/login');
+  };
+
+  const handleSignInClickToRegister = () => {
+    //NOTE: SIGN IN 클릭 시 /login 으로 이동
+    navigate('/register');
   };
 
 
@@ -120,8 +125,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <MenuItem>REGISTER</MenuItem>
-              <MenuItem onClick={handleSignInClick}>SIGN IN</MenuItem>
+              <MenuItem onClick={handleSignInClickToRegister} >REGISTER</MenuItem>
+              <MenuItem onClick={handleSignInClickToLogin}>SIGN IN</MenuItem>
             </>
           )}
           <Link to="/cart">

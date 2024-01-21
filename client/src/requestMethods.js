@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/";
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://your-heroku-app-url/api/' // 여기에 Heroku 주소
+  : 'http://localhost:5000/api/'; // 로컬 개발 서버 주소
 
 // 로컬 스토리지에서 데이터 가져오기
 const storedData = localStorage.getItem("persist:root");
