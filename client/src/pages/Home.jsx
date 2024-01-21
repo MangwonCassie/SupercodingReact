@@ -6,11 +6,13 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
+import ScrollToTopButton from "../shared/ScrollToButton";
 
 const Home = () => {
   return (
     <div>
       <Announcement />
+      <ScrollToTopButton/>
       <Navbar />
       <Slider />
       <Categories />
