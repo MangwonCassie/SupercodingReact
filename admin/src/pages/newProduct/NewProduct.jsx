@@ -6,17 +6,15 @@ import { addProduct } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
 
 export default function NewProduct() {
-  const dispatch = useDispatch();
-
-
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
+  const dispatch = useDispatch();
 
   //NOTE: 전 상태 복사한 객체 + 계산된 속성이름 사용한 객체 이걸 콤마로 연결한다. 
   const handleChange = (e) => {
-    setInputs(prev=>{
-      return {...prev, [e.target.name]: e.target.value}
+    setInputs(prev => {
+      return { ...prev, [e.target.name]: e.target.value }
     })
   }
   const handleCategories = (e) => {
@@ -68,9 +66,7 @@ export default function NewProduct() {
     );
   };
 
-  
-  
-  
+
 
   //NOTE: 1개 파일이라서 [0] 인덱스 설정
   return (
@@ -79,7 +75,7 @@ export default function NewProduct() {
       <form className="addProductForm">
         <div className="addProductItem">
           <label>Image</label>
-          <input type="file" id="file" onChange={e=>setFile(e.target.files[0])}/>   
+          <input type="file" id="file" onChange={e => setFile(e.target.files[0])} />
         </div>
         <div className="addProductItem">
           <label>Title</label>
@@ -87,22 +83,22 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Description</label>
-          <input name="desc"  type="text" placeholder="description" onChange={handleChange} />
+          <input name="desc" type="text" placeholder="description" onChange={handleChange} />
         </div>
         <div className="addProductItem">
-          <label>Price</label> 
+          <label>Price</label>
           <input name="price" type="number" placeholder="100" onChange={handleChange} />
         </div>
         <div className="addProductItem">
           <label>Categories</label>
-          <input type="text" placeholder="jeans, skirts" onChange={handleCategories}/>
+          <input type="text" placeholder="jeans, skirts" onChange={handleCategories} />
         </div>
         <div className="addProductItem">
           <label>Stock</label>
-        <select name="inStock" onChange={handleChange}>
-          <option value="true">YES</option>
-          <option value="false">NO</option>
-        </select>
+          <select name="inStock" onChange={handleChange}>
+            <option value="true">YES</option>
+            <option value="false">NO</option>
+          </select>
         </div>
         <button onClick={handleClick} className="addProductButton">Create</button>
       </form>

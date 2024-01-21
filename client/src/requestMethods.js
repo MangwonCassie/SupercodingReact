@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://your-heroku-app-url/api/' // 여기에 Heroku 주소
+  ? 'https://mighty-waters-06853-0623ee72fb5f.herokuapp.com/' // 여기에 Heroku 주소
   : 'http://localhost:5000/api/'; // 로컬 개발 서버 주소
 
 // 로컬 스토리지에서 데이터 가져오기

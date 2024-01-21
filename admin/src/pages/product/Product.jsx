@@ -26,8 +26,6 @@ export default function Product() {
             desc: e.target.form.elements.productDesc.value,
             price: e.target.form.elements.productPrice.value,
             inStock: e.target.form.elements.inStock.value === "yes" ? true : false,
-            // 다른 필요한 정보들도 추가할 수 있습니다.
-            
           };
         
           updateProducts(productId, dispatch, updatedProduct);
