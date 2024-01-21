@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-  
   const ScrollToTopButton = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -12,8 +11,6 @@ import { useState, useEffect } from "react";
       const shouldShow = scrollY > threshold;
       setShowScrollButton(shouldShow);
     };
-
-    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 

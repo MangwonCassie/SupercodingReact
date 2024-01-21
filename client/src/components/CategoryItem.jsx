@@ -44,13 +44,15 @@ const Button = styled.button`
 `;
 
 const CategoryItem = ({ item }) => {
+
+  console.log("왜 mens는 안나오는거야?", item.cat);
   return (
     <Container>
       <Link to = {`/products/${item.cat}`}>
         <Image src={item.img} />
         <Info>
           <Title>{item.cat}</Title>
-          <Button>SHOP NOW</Button>
+          <Button>여기야 SHOP NOW</Button>
         </Info>
       </Link>
     </Container>
