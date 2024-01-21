@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://mighty-waters-06853-0623ee72fb5f.herokuapp.com/",  
   "eslintConfig": {
     "extends": [
       "react-app",
