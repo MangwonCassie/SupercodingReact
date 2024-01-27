@@ -2,7 +2,9 @@ import styled from "styled-components";
 import {mobile} from "../responsive";
 import { useState } from "react";
 import { login } from "../redux/apiCalls";
+import {clearError} from "../redux/userRedux"
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -77,7 +79,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  //error 
   const {isfetching, error} = useSelector((state) => state.user);
 
   const handleClick = (e) => {
@@ -86,6 +87,14 @@ const Login = () => {
     login(dispatch, {username, password})
 
   }
+
+  //로그인창 새로고침하면 비밀번호 이전에 틀렸을 때 비밀번호 틀렸다는 글귀 없애려고 추가
+  useEffect(() => {
+    return () => {
+      // 언마운트 시 에러 초기화
+      dispatch(clearError());
+    };
+  }, [dispatch]);
 
 
   return (

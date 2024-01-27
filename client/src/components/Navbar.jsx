@@ -84,6 +84,14 @@ const Navbar = () => {
   const quantity = useSelector(state => state.cart.quantity);
   const navigate = useNavigate();
 
+
+  const handleAdminClick = () => {
+    // 어드민 탭 클릭 시 어드민 프로젝트로 이동
+    window.location.href = '/admin/dashboard';
+  };
+
+
+
   const handleSignInClickToLogin = () => {
     //NOTE: SIGN IN 클릭 시 /login 으로 이동
     navigate('/login');
@@ -121,6 +129,7 @@ const Navbar = () => {
           {user ? (
             <>
               {/* 로그인 된 경우에 표시되어야 할 JSX 코드 */}
+              {user.isAdmin && <Link to="/admin/dashboard"><MenuItem onClick={handleAdminClick}>ADMIN</MenuItem></Link>}
               <MenuItem onClick={handleLogout}>LOGOUT</MenuItem>
             </>
           ) : (
