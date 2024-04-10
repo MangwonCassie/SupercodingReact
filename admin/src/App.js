@@ -14,6 +14,8 @@ import { useSelector } from "react-redux";
 
 function App() {
 
+  const isLoggedIn = localStorage.getItem("persist:root") !== null;
+
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
   
   return (
@@ -22,7 +24,7 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        {  (<>
+        {isLoggedIn && (<>
           <Topbar />
           <div className="container">
             <Sidebar />
