@@ -12,3 +12,9 @@
 | Version Control        | <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">  |
 
 📌[노션 자료]: (https://decisive-atmosphere-edd.notion.site/E-commerce-by-Cassie-325e756d0281477cb5c74e32488698e1)
+
+📌📎 [프로젝트 #2  CHAT APP] (https://github.com/MangwonCassie/MiniProject/tree/chatapp) <br/>
+사람들을 찾아 소통할 수 있는 채팅 앱입니다.
+react-chat-engine-advanced 를 사용하여 실시간으로 상대방과 채팅할 수 있습니다.
+FCM을 사용하여 Push를 수신할 수 있습니다.
+CLLocation을 사용하여 현재 위치를 기준으로 주변에 원하는 사람을 찾고, 채팅 요청을 요청 또는 수락할 수 있습니다.
