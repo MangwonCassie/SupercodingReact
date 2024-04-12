@@ -25,7 +25,8 @@
 
 📌📎 [프로젝트 #2  CHAT APP] (https://github.com/MangwonCassie/MiniProject/tree/chatapp)<br>
 ---
-사람들을 찾아 소통할 수 있는 채팅 앱입니다.<br>
-react-chat-engine-advanced 를 사용하여 실시간으로 상대방과 채팅할 수 있습니다.<br/>
-FCM을 사용하여 Push를 수신할 수 있습니다. 🚩(developing...)<br/>
-CLLocation을 사용하여 현재 위치를 기준으로 주변에 원하는 사람을 찾고, 채팅 요청을 요청 또는 수락할 수 있습니다. 🚩(developing...)<br/>
+- 사람들을 찾아 소통할 수 있는 채팅 앱입니다.<br>
+- react-chat-engine-advanced 를 사용하여 실시간으로 상대방과 채팅할 수 있습니다.<br>
+- Axios를 통해서 HTTP요쳥을 https://api.chatengine.io/users/ 으로 보내 비동기로 처리합니다. 또한, 요청 헤더를 설정하고 사용자 인증 정보를 추가합니다.<br>
+- FCM을 사용하여 Push를 수신할 수 있습니다. 🚩(developing...)<br>
+- CLLocation을 사용하여 현재 위치를 기준으로 주변에 원하는 사람을 찾고, 채팅 요청을 요청 또는 수락할 수 있습니다. 🚩(developing...)<br>
